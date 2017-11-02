@@ -1,0 +1,170 @@
+.back{
+    position:absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    background: #EDEEF0;
+    height: 100%;
+}
+.wrapper{
+    background: #EDEEF0;
+    width:100%;
+    position: absolute;
+    margin: 0;
+    left: 0;
+    top: 0;
+    font-family: "Verdana";
+    z-index: 0;
+}
+.sidebar{
+    position: absolute;
+    left: calc(50% - 480px);
+    top: 52px;
+    width: 200px;
+    background: #EDEEF0;
+    height: 400px;
+    z-index: 6;
+    margin-bottom: 15px;
+}
+.content{
+    position: relative;
+    width: 550px;
+    top: 30px;
+    margin: auto;
+    background: #ffffff;
+
+    z-index: 1;
+}
+.freespace{
+    width: 100%;
+    height: 50px;
+    background: #EDEEF0;
+}
+.headerback{
+    position: fixed;
+    margin: 0;
+    width:100%;
+    top: 0px;
+    left: 0px;
+    height: 42px;
+    background: #33a62b;
+    margin-bottom: 10px;
+    z-index: 7;
+}
+.header{
+    position:relative;
+    background: #33a62b;
+    width: 960px;
+    margin: auto;
+    height: 42px;
+    z-index: 8;
+}
+.user{
+    position:relative;
+    background: #ffffff;
+    z-index:1;
+    width: 530px;
+    margin: auto;
+    height: 100px;
+    border-top: 1px solid #EDEEF0;
+}
+.userphoto{
+    position:relative;
+    left: 10px;
+    top: 15px;
+
+    height: 70px;
+    width: 70px;
+    min-width: 70px;
+    min-height: 70px;
+    max-height: 70px;
+    max-width: 70px;
+}
+.userurl{
+    position: relative;
+    left: 90px;
+    top: -55px;
+    background: #ffffff;
+    width: 430px;
+    height: 70px;
+    font-size: 20pt;
+}
+.footer{
+    height: 20px;
+    background: #33a62b;
+    position: fixed;
+    left: 0;
+    bottom: 0px;
+    width: 100%;
+    z-index: 10;
+}
+.MainHeader{
+    padding: 10px;
+    text-align: center;
+}
+.up{
+    max-width: 70px;
+    max-height: 70px;
+}
+.uu{
+    text-decoration: none;
+    font-size: 18pt;
+}
+.logo {
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+}
+.element{
+    text-decoration: none;
+}
+
+.inp{
+position: relative;
+left: 165px;
+width: 200px;
+margin: 0;
+padding: 0;
+}
+
+
+#avatar{
+    position:absolute;
+    left: 10px;
+}
+#information{
+    position: relative;
+    top: 0px;
+    left: 170px;
+    min-height: 200px;
+}
+#good_price{
+    color: red;
+}
+h1 {
+    color: gray;
+}
+.up2{
+    position: absolute;
+    left: 200px;
+}
+
+
+
+.authform{
+    width: 250px;
+    position: relative;
+    left: 140px;
+    margin-bottom: -10px;
+    height: 25px;
+}
+
+#authbutt{
+    position: relative;
+    left: 140px;
+    height: 35px;
+}
+#regbutt{
+    position: relative;
+    left: 160px;
+}

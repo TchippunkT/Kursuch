@@ -1,0 +1,58 @@
+{% load bootstrap_pagination %}
+<ul class="pagination{% if size == "small" %} pagination-sm{% endif %}{% if size == "large" %} pagination-lg{% endif %}{% block extra_classes %}{% endblock %}">
+{% if show_first_last %}
+    {% if not page.has_previous %}
+      <span class="disabled">
+        <span>{{ first_label }}</span>
+      </span>
+    {% else %}
+      <span>
+        <a title="First Page" href="{{ first_page_url|default:"#"|escape }}">{{first_label}}</a>
+      </span>
+    {% endif %}
+{% endif %}
+{% if show_prev_next %}
+    {% if not page.has_previous %}
+      <span class="disabled">
+        <span title="Previous Page">{{ previous_label }}</span>
+      </span>
+    {% else %}
+      <span>
+        <a title="Previous Page" href="{{ previous_page_url|default:"#"|escape }}">{{ previous_label }}</a>
+      </span>
+    {% endif %}
+{% endif %}
+{% for pagenum, index_range, url in page_urls %}
+    {% if page.number == pagenum %}
+        <span class="active">
+            <span title="Current Page">{% if show_index_range %} {{ index_range }} {% else %} {{ pagenum }} {%endif %}</span>
+        </span>
+    {% else %}
+        <span>
+            <a title="Page {{ pagenum }} of {{ page.paginator.num_pages }}" href="{{ url|escape }}">{% if show_index_range %} {{ index_range }} {% else %} {{ pagenum }} {%endif %}</a>
+        </span>
+    {% endif %}
+{% endfor %}
+{% if show_prev_next %}
+    {% if not page.has_next %}
+      <span class="disabled">
+        <span title="Next Page">{{ next_label }}</span>
+      </span>
+    {% else %}
+      <span>
+        <a title="Next Page" href="{{ next_page_url|default:"#"|escape }}">{{ next_label }}</a>
+      </span>
+    {% endif %}
+{% endif %}
+{% if show_first_last %}
+    {% if not page.has_next %}
+      <span class="disabled">
+        <span title="Last Page" >{{ last_label }}</span>
+      </span>
+    {% else %}
+      <span>
+        <a title="Last Page" href="{{ last_page_url|default:"#"|escape }}">{{last_label}}</a>
+      </span>
+    {% endif %}
+{% endif %}
+</ul>
