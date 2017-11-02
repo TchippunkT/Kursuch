@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load bootstrap_pagination %}
+       {% block content %}
+            <h1 class="MainHeader">Список товаров</h1>
+            {%for good in goods  %}
+            <div class="user">
+                <div class="userphoto">
+                    <img src = "../../{{ good.good_img.url }}" class="up">
+                </div>
+                <div class="userurl">
+                    <a href="/goods/{{ good.id }}" class="uu">{{ good.good_name}}</a><br>
+                    {% if request.user.is_authenticated %}
+                    <form action="/users/buy/{{ good.id }}/" target="_blank" method="POST">{% csrf_token %}
+                        <input type="submit" value="Купить" name="buy" />
+                    </form>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+    <div class="pagination">
+    <span class="step-links">
+    {% bootstrap_paginate goods range=4 show_prev_next="false" show_first_last="true" first_label="В начало" last_label="В конец" %}
+
+{#<div class="pagination">#}
+{#    <span class="step-links">#}
+{#        {% if contacts.has_previous %}#}
+{#            <a href="?page={{ contacts.previous_page_number }}">previous</a>#}
+{#        {% endif %}#}
+{##}
+{#        <span class="current">#}
+{#            Page {{ contacts.number }} of {{ contacts.paginator.num_pages }}.#}
+{#        </span>#}
+{##}
+{#        {% if contacts.has_next %}#}
+{#            <a href="?page={{ contacts.next_page_number }}">next</a>#}
+{#        {% endif %}#}
+{#    </span>#}
+{#</div>#}
+    </span>
+</div>
+       {% endblock %}

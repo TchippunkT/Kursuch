@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+    {% block content %}
+        <!-- Показ для авторизированных пользователей -->
+        {% if request.user.is_authenticated %}
+        <div id="information">
+            <p>Вы зашли как {{request.user.username }}
+            Вы можете <a href="registration/users"> посмотреть список пользователей </a></p>
+            <p><a href="logout/">Выйти</a></p>
+        </div>
+        {% else %}
+            <!-- Показ для не авторизированных пользователей -->
+
+    <form action="" method="post" >
+    <h1 class="MainHeader">Авторизация</h1>
+      {% csrf_token %}
+      {{ form.as_p }}
+       <button id="authbutt" type="submit">Войти</button><a href="/registration/" id="regbutt">Зарегистрироваться</a><br><br>
+    </form>
+        {% endif %}
+    {% endblock %}

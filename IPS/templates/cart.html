@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+        {% block content %}
+            <h1 class="MainHeader">Корзина</h1>
+            {% for dt in data %}
+                        <img src="../../{{ dt.0.good_img }}" class="up">
+                        {{ dt.0.good_name }}
+                         - {{ dt.1 }} шт.<br>
+                {% endfor %}
+            <br>ИТОГО: {{ summ }}р.<br><br>
+            Чтобы перейти к оформлению заказа, нажмите сюда:
+            <form action="/users/order/" method="POST">{% csrf_token %}
+                <input type="submit" value="Оформить" name="buy" />
+            </form>
+        {% endblock %}
+
+{#<div id="avatar">#}
+{#                <img src="../../{{ goods.cart_goods.good_img }}" width="150" height="150"><br><br>#}
+{#            </div>#}
+{#            <div id="information">#}
+{#                <p>Наименование: {{ good.cart_goods.good_name }}</p>#}
+{#                <p>Описание: {{ good.cart_goods.good_description }}</p>#}
+{#                <p>Цена: {{ good.cart_goods.good_price }}р</p>#}
+{#                <p>Количество: {{ good.cart_goods.good_amount }}</p>#}
+{#            </div>#}

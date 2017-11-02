@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+  {% block content %}
+
+
+      <!-- as_p для того, чтобы каждый элемент формы был с новой строки -->
+            <h1 class="MainHeader">Регистрация</h1>
+      <form action="" method="post" enctype="multipart/form-data" class = "inp">{% csrf_token %}
+             <p style="text-align: center">Для регистрации заполните следующие поля:</p>
+                {{ user_form.as_p }}
+                {{ profile_form.as_p }}
+                <button  type="submit">Зарегистрироваться</button><br><br>
+       </form>
+    {% endblock %}

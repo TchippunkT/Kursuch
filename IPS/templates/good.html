@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+        {% block content %}
+            <h1 class="MainHeader">Информация о товаре</h1>
+            <div id="avatar">
+                <img src="../../{{ good.good_img.url }}" width="150" height="150"><br><br>
+            </div>
+            <div id="information">
+                <p>Наименование: {{ good.good_name }}</p>
+                <p>Описание: {{ good.good_description }}</p>
+                <p>Цена: {{ good.good_price }}р</p>
+                <p>Количество: {{ good.good_amount }}</p>
+                <form action="" method="POST">{% csrf_token %}
+                    <input type="submit" value="Submit" name="mybtn" />
+                </form>
+            </div>
+        {% endblock %}

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+        {% block content %}
+            <h1 class="MainHeader">Информация о пользователе</h1>
+            <div id="avatar">
+                <img src="../../{{ user.myuser.avatar.url }}" width="150" height="150"><br><br>
+            </div>
+            <div id="information">
+                <p>Имя пользователя: {{ user.first_name }}</p>
+                <p>Email пользователя: {{ user.email }}</p>
+                <p>Дата регистрации: {{ user.date_joined }}</p>
+            </div>
+        {% endblock %}

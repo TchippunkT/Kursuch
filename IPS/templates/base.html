@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <link rel="stylesheet" href="/css/users.css" type="text/css" />
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+<div class="back"></div>
+    <div class="wrapper">
+        <div class="sidebar">
+            {% block sidebar %}
+                <a href="/goods/" class="element">Список товаров</a>
+                {% if request.user.is_authenticated %}
+                    <a href="/users/" class="element">Список пользователей</a><br>
+                    <a href="/users/cart/" class="element">Корзина</a><br>
+                    <a href="/logout/" class="element">Выход</a><br>
+                {% else %}
+                    <a href="/registration/" class="element">Регистрация</a><br>
+                    <a href="/auth/" class="element">Вход</a><br>
+                {% endif %}
+            {% endblock %}
+        </div>
+        <div class="headerback">
+            <div class="header">
+                <h1 class="logo">Лого</h1>
+            </div>
+        </div>
+        <div class="content">
+           {% block content %}
+               <p>Тут ничего нет =(</p>
+           {% endblock %}
+        </div>
+        <div class="freespace"></div>
+        <div class="footer">
+            (c)Gladkevich, Zagidulin
+        </div>
+    </div>
+</body>
+</html>

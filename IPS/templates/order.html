@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% load bootstrap_pagination %}
+       {% block content %}
+           <h1 class="MainHeader">Оформление заказа</h1>
+           {{ form.as_p }}
+           <form action="/users/buy/" method="POST">{% csrf_token %}
+                <input type="submit" value="Оформить" name="buy" />
+            </form>
+{% endblock %}

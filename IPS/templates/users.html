@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+       {% block content %}
+           {% if request.user.is_authenticated %}
+            <h1 class="MainHeader">Список пользователей</h1>
+            {%for my_user in user_list  %}
+            <div class="user">
+                <div class="userphoto">
+                    <img src = "../../{{ my_user.avatar.url }}" class="up">
+                </div>
+                <div class="userurl">
+                    <a href="/users/{{ my_user.user_id }}/" class="uu">{{ my_user.user.first_name}}</a><br>
+                </div>
+            </div>
+            {% endfor %}
+           {% endif %}
+       {% endblock %}
